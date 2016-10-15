@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# Run all dotfiles installers.
+
+set -e
+
+cd "$(dirname $0)"/..
+
+# find the installers sorts them by *filename* (useful for order independant things e.g. installing homebrew before anything else) and run them iteratively
+find . -name *install.sh | awk -v FS=/ -v OFS=/ '{print $NF,$0}' | sort | cut -f2- -d/ | while read installer ; do sh -c "${installer}" ; done

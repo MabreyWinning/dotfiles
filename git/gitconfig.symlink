@@ -1,0 +1,8 @@
+[user]
+	name = Tony Winn
+	email = hi@tonywinn.me
+[push]
+	default = simple
+[status]
+	submoduleSummary = true
+
